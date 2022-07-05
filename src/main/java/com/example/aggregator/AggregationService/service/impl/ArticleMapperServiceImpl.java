@@ -11,6 +11,8 @@ import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -56,6 +58,7 @@ public class ArticleMapperServiceImpl implements ArticleMapperService {
         Element itemAuthor= item.selectFirst("dc|creator");
         Element itemDesc= item.selectFirst("description");
         Element itemLink=item.selectFirst("link");
+        Element itemPubDate=item.selectFirst("pubDate");
         String itemImage= getItemImageURL(item);
         Article article= new Article();
 
@@ -74,6 +77,15 @@ public class ArticleMapperServiceImpl implements ArticleMapperService {
             article.setDescription(itemDesc.text());
         if(itemImage!=null)
             article.setImageURL(itemImage);
+        if(itemPubDate!=null){
+            LocalDateTime itemPubTime = LocalDateTime.from(DateTimeFormatter.RFC_1123_DATE_TIME.parse(itemPubDate.text()));
+            article.setPubTime(itemPubTime);
+
+        }
+        else{
+            article.setPubTime(LocalDateTime.now());
+        }
+
 
         return article;
 

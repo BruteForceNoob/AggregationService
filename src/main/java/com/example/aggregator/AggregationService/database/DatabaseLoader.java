@@ -39,7 +39,6 @@ public class DatabaseLoader {
 
         urls.add("https://techcrunch.com/feed/");
         urls.add("https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml");
-        urls.add("https://www.wired.com/feed");
         urls.add("https://arstechnica.com/feed/");
 
 

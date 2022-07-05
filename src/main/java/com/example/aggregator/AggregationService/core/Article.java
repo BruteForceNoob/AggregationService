@@ -5,6 +5,7 @@ import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +25,10 @@ public class Article {
     private String source;
     private String guid;
     private String feedSourceImgLink;
+
+
+
+    private LocalDateTime pubTime;
 
 
 
@@ -146,5 +151,13 @@ public class Article {
 
     public void setFeedSourceImgLink(String feedSourceImgLink) {
         this.feedSourceImgLink = feedSourceImgLink;
+    }
+
+    public LocalDateTime getPubTime() {
+        return pubTime;
+    }
+
+    public void setPubTime(LocalDateTime pubTime) {
+        this.pubTime = pubTime;
     }
 }
