@@ -2,8 +2,7 @@ package com.example.aggregator.AggregationService.service.impl;
 
 import com.example.aggregator.AggregationService.core.Article;
 import com.example.aggregator.AggregationService.service.ArticleMapperService;
-import com.rometools.rome.feed.synd.SyndContent;
-import com.rometools.rome.feed.synd.SyndEntry;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

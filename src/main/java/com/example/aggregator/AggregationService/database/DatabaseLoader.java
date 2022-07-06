@@ -2,10 +2,7 @@ package com.example.aggregator.AggregationService.database;
 
 import com.example.aggregator.AggregationService.core.Article;
 import com.example.aggregator.AggregationService.service.ArticleMapperService;
-import com.rometools.rome.feed.synd.SyndFeed;
-import com.rometools.rome.io.FeedException;
-import com.rometools.rome.io.SyndFeedInput;
-import com.rometools.rome.io.XmlReader;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
