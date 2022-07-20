@@ -19,12 +19,14 @@ public class Article {
 
 
     @Lob
+    @Column(name = "description")
     private String description;
     private String author;
     private String link;
     private String source;
     private String guid;
     private String feedSourceImgLink;
+    private String category;
 
 
 
@@ -33,6 +35,7 @@ public class Article {
 
 
     @Lob
+    @Column(name="imageurl")
     private String imageURL;
 
     //private List<String> categories = new ArrayList<>();
@@ -83,7 +86,7 @@ public class Article {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getTitle(), getSource());
+        return Objects.hash(getTitle(), getSource());
     }
 
     @Override
@@ -99,6 +102,14 @@ public class Article {
                 ", imageURL='" + imageURL + '\'' +
 
                 '}';
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setTitle(String title) {
