@@ -2,6 +2,7 @@ package com.example.aggregator.AggregationService.controller;
 
 import com.example.aggregator.AggregationService.core.Article;
 import com.example.aggregator.AggregationService.database.ArticleRepository;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.data.domain.*;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +36,18 @@ public class ArticleController {
             return articlePage.getContent();
         return new ArrayList<>();
 
+
+    }
+    @GetMapping("/{id}")
+    Article getArticle(@PathVariable Long id){
+        try {
+            return articleRepository.findById(id).get();
+
+        }
+        catch (Exception e)
+        {
+            return new Article();
+        }
 
     }
 
